@@ -10,6 +10,14 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AccessProvider } from '../providers/access/access';
+import { LoginPage } from '../pages/login/login';
+import { HttpClientModule } from '@angular/common/http';
+import { ComponentsModule } from '../components/components.module';
+
+import { AgmCoreModule } from "@agm/core";
+
+import { LongPressModule } from "ionic-long-press";
 
 @NgModule({
   declarations: [
@@ -17,11 +25,18 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: "AIzaSyAuNFy_pZ8-QWoQW6YxJep20QCEd0RR1vs"
+    }),
+    LongPressModule,
+    ComponentsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -29,12 +44,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AccessProvider
   ]
 })
 export class AppModule {}
