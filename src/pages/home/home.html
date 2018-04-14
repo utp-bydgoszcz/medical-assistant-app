@@ -5,11 +5,10 @@
 </ion-header>
 
 <ion-content>
+  <ion-fab bottom right>
+    <button ion-fab (click)="list()">
+      <ion-icon name="list"></ion-icon>
+    </button>
+  </ion-fab>
   <component-map></component-map>
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar>
-    <button ion-button color="warning" block ion-long-press [interval]="2000" (onPressing)="helpMe()" (onPressEnd)="null" (onPressStart)="null">Pomocy</button>
-  </ion-toolbar>
-</ion-footer>

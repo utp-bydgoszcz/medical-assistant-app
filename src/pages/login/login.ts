@@ -23,6 +23,9 @@ export class LoginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+    this.accessService.autologin().subscribe(
+      () => this.navCtrl.setRoot(TabsPage)
+    );
   }
 
   login(loginForm: NgForm) {

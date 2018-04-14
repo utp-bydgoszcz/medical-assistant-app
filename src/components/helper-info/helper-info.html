@@ -1,0 +1,32 @@
+<ion-card *ngIf="person">
+  <ion-card-header>
+    <!-- {{ person.firstName }} {{ person.lastName }} -->
+    <ion-item>
+      <ion-avatar item-start>
+        <img style="width: 8rem; height: 8rem;" [src]="person.img">
+      </ion-avatar>
+      <h1>{{ person.firstName }} {{ person.lastName }}</h1>
+      <p>Superhero {{ person.tel }} </p>
+    </ion-item>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col text-left>
+          <button round color="primary" ion-button (click)="callMe()">
+            <ion-icon name="call"></ion-icon>
+            &nbsp;Zadzwoń
+          </button>
+        </ion-col>
+        <ion-col text-right>
+          <button round color="danger" ion-button (click)="cancelPerson()">
+              <ion-icon name="close"></ion-icon>
+              &nbsp;Odwołaj
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+
+</ion-card>

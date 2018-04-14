@@ -1,0 +1,16 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>help-{{pageType}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <helper-info *ngFor="let person of persons" [person]="person" (onPersonDismiss)="personDismissed(person)"></helper-info>
+  <div style="text-align: center">
+    Zgłoszenie zostało przyjęte; czekaj na pomoc <br>
+    <ion-spinner></ion-spinner>
+  </div>
+</ion-content>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "131172055126",
+    "firebase_url": "https://health-assistant-af9ee.firebaseio.com",
+    "project_id": "health-assistant-af9ee",
+    "storage_bucket": "health-assistant-af9ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:131172055126:android:95e9fe6c6cbda928",
+        "android_client_info": {
+          "package_name": "com.tomaszdomanski.nearmeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "131172055126-v2c6dtfdu33icmdsop2h7aded7a4nvoe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxQ7ZgR7qBHXamEoCrYazaPAnxjUsAYDc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

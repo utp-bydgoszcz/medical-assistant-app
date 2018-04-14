@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="secondary">
     <ion-title>
       About
     </ion-title>
@@ -7,5 +7,22 @@
 </ion-header>
 
 <ion-content padding>
-
+  <ion-list>
+    <ion-item>
+      <button ion-button color="danger" block ion-long-press [interval]="1000" (onPressing)="helpMeUrgent()" (onPressEnd)="null" (onPressStart)="null"
+        large>🔥🔥🔥Pomocy motzno🔥🔥🔥</button>
+    </ion-item>
+    <ion-item>
+      <button ion-button color="warning" block ion-long-press [interval]="1000" (onPressing)="helpMePlease()" (onPressEnd)="null" (onPressStart)="null"
+        large>🤕🤕🤕Pomocy mniej motzno🤕🤕🤕</button>
+    </ion-item>
+    <ion-item>
+      <button ion-button color="primary" block ion-long-press [interval]="1000" (onPressing)="helpMeSomewhen()" (onPressEnd)="null" (onPressStart)="null"
+        large>💊💊💊Pomocy tak wiesz...💊💊💊</button>
+    </ion-item>
+    <ion-item>
+      <button ion-button color="light" block ion-long-press [interval]="1000" (onPressing)="helpMeSomewhen()" (onPressEnd)="null" (onPressStart)="null"
+        large>😈😈😈Pomoc ińsza😈😈😈</button>
+    </ion-item>
+  </ion-list>
 </ion-content>

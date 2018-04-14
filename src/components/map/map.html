@@ -1,4 +1,13 @@
-<!-- <div id="map" style="width: 100%; height: 100%">
+<agm-map [latitude]="latitude" [longitude]="longitude" style="width: 100%; height: 100%">
+  <agm-marker *ngFor="let marker of markers" [latitude]="marker.lat" [longitude]="marker.lon" [iconUrl]="'assets/imgs/aed.png'">
+    <agm-info-window>
+      {{marker.title}}
+    </agm-info-window>
+  </agm-marker>
+  <agm-marker *ngFor="let marker of otherMarkers" [latitude]="marker.lat" [longitude]="marker.lng" [iconUrl]="'assets/imgs/' + marker.icon">
+    <agm-info-window>
+      {{marker.title}}
+    </agm-info-window>
+  </agm-marker>
 
-</div> -->
-<agm-map [latitude]="52" [longitude]="18" style="width: 100%; height: 100%"></agm-map>
+</agm-map>

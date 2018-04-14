@@ -1,0 +1,29 @@
+<!-- Generated template for the HelpRequestComponent component -->
+<ion-card *ngIf="request">
+  <ion-card-header>
+    <ion-item>
+      <h1>{{ request.patient.name }}</h1>
+    </ion-item>
+  </ion-card-header>
+  <ion-card-content>
+    <p>
+      {{ request.patient.patientDescription }}
+    </p>
+    <ion-grid>
+      <ion-row>
+        <ion-col text-left>
+          <button block round color="primary" ion-button (click)="accept()">
+            <ion-icon name="checkmark"></ion-icon>
+            &nbsp;Przyjmij
+          </button>
+        </ion-col>
+        <ion-col text-right>
+          <button block round color="danger" ion-button (click)="dismiss()">
+            <ion-icon name="close"></ion-icon>
+            &nbsp;Odmów
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>

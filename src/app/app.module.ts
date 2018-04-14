@@ -12,12 +12,25 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AccessProvider } from '../providers/access/access';
 import { LoginPage } from '../pages/login/login';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ComponentsModule } from '../components/components.module';
 
 import { AgmCoreModule } from "@agm/core";
 
 import { LongPressModule } from "ionic-long-press";
+import { HelpPageModule } from '../pages/help/help.module';
+import { HelpSomewhenPageModule } from '../pages/help-somewhen/help-somewhen.module';
+import { HelpPleasePageModule } from '../pages/help-please/help-please.module';
+import { FCM } from '@ionic-native/fcm';
+import { AndroidPermissions } from '@ionic-native/android-permissions';
+import { CallNumber } from '@ionic-native/call-number';
+import { HelpProvider } from '../providers/help/help';
+import { HelpRequestsPageModule } from '../pages/help-requests/help-requests.module';
+import { HelpRequestProvider } from '../providers/help-request/help-request';
+import { LaunchNavigator } from '@ionic-native/launch-navigator';
+import { RequestDetailsPageModule } from '../pages/request-details/request-details.module';
+import { AccessInterceptorProvider } from '../providers/access-interceptor/access-interceptor';
+import { MarkersProvider } from '../providers/markers/markers';
 
 @NgModule({
   declarations: [
@@ -36,7 +49,12 @@ import { LongPressModule } from "ionic-long-press";
       apiKey: "AIzaSyAuNFy_pZ8-QWoQW6YxJep20QCEd0RR1vs"
     }),
     LongPressModule,
-    ComponentsModule
+    HelpPageModule,
+    HelpSomewhenPageModule,
+    HelpPleasePageModule,
+    ComponentsModule,
+    HelpRequestsPageModule,
+    RequestDetailsPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -51,7 +69,15 @@ import { LongPressModule } from "ionic-long-press";
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AccessProvider
+    AccessProvider,
+    FCM,
+    AndroidPermissions,
+    CallNumber,
+    HelpProvider,
+    HelpRequestProvider,
+    LaunchNavigator,
+    {provide: HTTP_INTERCEPTORS, useClass: AccessInterceptorProvider, multi: true},
+    MarkersProvider
   ]
 })
 export class AppModule {}
